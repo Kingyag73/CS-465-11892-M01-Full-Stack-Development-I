@@ -1,0 +1,49 @@
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h1>Travlr Getaways</h1>
+
+    <h2>Admin Login</h2>
+
+    <form (ngSubmit)="login()">
+
+      <label for="email">Email</label>
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+      >
+
+      <label for="password">Password</label>
+
+      <input
+        id="password"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+      >
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+
+      <button type="submit" [disabled]="loading">
+
+        @if (loading) {
+          Logging in...
+        } @else {
+          Login
+        }
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

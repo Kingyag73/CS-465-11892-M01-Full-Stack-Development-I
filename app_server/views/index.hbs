@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+<h1>{{heading}}</h1>
+
+<p>{{message}}</p>
+
+
+<h2>Available Trips</h2>
+
+{{#each trips}}
+
+<div>
+
+    <h3>{{name}}</h3>
+
+    <p>Length: {{length}}</p>
+
+    <p>Start Date: {{start}}</p>
+
+    <p>Resort: {{resort}}</p>
+
+    <p>Price: {{price}}</p>
+
+</div>
+
+<hr>
+
+{{/each}}
+
+
+</body>
+
+</html>

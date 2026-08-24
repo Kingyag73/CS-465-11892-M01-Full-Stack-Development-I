@@ -1,0 +1,18 @@
+[
+    {
+        "code": "GAL001",
+        "name": "Galapagos Islands",
+        "length": "7 days",
+        "start": "2026-06-01",
+        "resort": "Galapagos Resort",
+        "price": "$2500"
+    },
+    {
+        "code": "BCN001",
+        "name": "Barcelona Adventure",
+        "length": "5 days",
+        "start": "2026-07-15",
+        "resort": "Barcelona Hotel",
+        "price": "$1800"
+    }
+]

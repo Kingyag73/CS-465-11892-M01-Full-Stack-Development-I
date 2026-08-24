@@ -1,0 +1,93 @@
+<div class="container py-4">
+
+  <h1>Edit Trip</h1>
+
+  <form (ngSubmit)="updateTrip()">
+
+    <div class="mb-3">
+      <label for="code" class="form-label">Trip Code</label>
+      <input
+        type="text"
+        id="code"
+        name="code"
+        class="form-control"
+        [(ngModel)]="trip.code"
+        placeholder="Example: BCN001"
+        required>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-secondary mb-4"
+      (click)="findTrip()">
+      Find Trip
+    </button>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Trip Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        [(ngModel)]="trip.name"
+        required>
+    </div>
+
+    <div class="mb-3">
+      <label for="length" class="form-label">Length</label>
+      <input
+        type="text"
+        id="length"
+        name="length"
+        class="form-control"
+        [(ngModel)]="trip.length"
+        required>
+    </div>
+
+    <div class="mb-3">
+      <label for="start" class="form-label">Start Date</label>
+      <input
+        type="text"
+        id="start"
+        name="start"
+        class="form-control"
+        [(ngModel)]="trip.start"
+        required>
+    </div>
+
+    <div class="mb-3">
+      <label for="resort" class="form-label">Resort</label>
+      <input
+        type="text"
+        id="resort"
+        name="resort"
+        class="form-control"
+        [(ngModel)]="trip.resort"
+        required>
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="text"
+        id="price"
+        name="price"
+        class="form-control"
+        [(ngModel)]="trip.price"
+        required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Save Changes
+    </button>
+
+  </form>
+
+  @if (message) {
+    <div class="alert alert-info mt-3">
+      {{ message }}
+    </div>
+  }
+
+</div>

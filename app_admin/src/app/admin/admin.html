@@ -1,0 +1,139 @@
+<div class="admin-container">
+
+  <h1>Travlr Getaways Admin</h1>
+
+  <button type="button" (click)="logout()">Logout</button>
+
+  <h2>Manage Trips</h2>
+
+  <p>Number of trips: {{ trips.length }}</p>
+
+  <button type="button" (click)="startAddTrip()">
+    Add New Trip
+  </button>
+
+  @if (addingTrip) {
+
+    <div class="edit-form">
+
+      <h2>Add New Trip</h2>
+
+      <label>
+        Code:
+        <input [(ngModel)]="newTrip.code">
+      </label>
+
+      <label>
+        Name:
+        <input [(ngModel)]="newTrip.name">
+      </label>
+
+      <label>
+        Length:
+        <input [(ngModel)]="newTrip.length">
+      </label>
+
+      <label>
+        Start Date:
+        <input [(ngModel)]="newTrip.start">
+      </label>
+
+      <label>
+        Resort:
+        <input [(ngModel)]="newTrip.resort">
+      </label>
+
+      <label>
+        Price:
+        <input [(ngModel)]="newTrip.price">
+      </label>
+
+      <button type="button" (click)="addTrip()">
+        Add Trip
+      </button>
+
+      <button type="button" (click)="cancelAddTrip()">
+        Cancel
+      </button>
+
+    </div>
+
+  }
+
+  @if (editingTrip) {
+
+    <div class="edit-form">
+
+      <h2>Edit Trip</h2>
+
+      <label>
+        Code:
+        <input [(ngModel)]="editingTrip.code">
+      </label>
+
+      <label>
+        Name:
+        <input [(ngModel)]="editingTrip.name">
+      </label>
+
+      <label>
+        Length:
+        <input [(ngModel)]="editingTrip.length">
+      </label>
+
+      <label>
+        Start Date:
+        <input [(ngModel)]="editingTrip.start">
+      </label>
+
+      <label>
+        Resort:
+        <input [(ngModel)]="editingTrip.resort">
+      </label>
+
+      <label>
+        Price:
+        <input [(ngModel)]="editingTrip.price">
+      </label>
+
+      <button type="button" (click)="saveTrip()">
+        Save Changes
+      </button>
+
+      <button type="button" (click)="cancelEdit()">
+        Cancel
+      </button>
+
+    </div>
+
+  }
+
+  <div class="trip-list">
+
+    @for (trip of trips; track trip._id) {
+
+      <div class="trip-card">
+
+        <h3>{{ trip.name }}</h3>
+
+        <p><strong>Code:</strong> {{ trip.code }}</p>
+        <p><strong>Length:</strong> {{ trip.length }}</p>
+        <p><strong>Start:</strong> {{ trip.start }}</p>
+        <p><strong>Resort:</strong> {{ trip.resort }}</p>
+        <p><strong>Price:</strong> {{ trip.price }}</p>
+
+        <button type="button" (click)="editTrip(trip)">
+          Edit Trip
+        </button>
+
+        <button type="button" (click)="deleteTrip(trip)">
+  Delete Trip
+</button>
+
+      </div>
+
+    }
+
+  </div>
+
+</div>
